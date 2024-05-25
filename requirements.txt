@@ -1,0 +1,13 @@
+Django==5.0.4
+opencv-python==4.9.0.80
+pytesseract==0.3.10
+Pillow==9.4.0
+# numpy==1.25.2
+# numpy
+# torch==2.2.1+cu118 
+# torchaudio==2.2.1+cu121
+# torchvision==0.17.1+cu121
+transformers==4.40.1
+reportlab==4.2.0
+auto_gptq==0.7.1
+optimum==1.19.1

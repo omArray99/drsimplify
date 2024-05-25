@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Report Explanation</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'report_analysis/css/main.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Medical Report Explanation</h1>
+            <p>Upload a medical report image to get an explanation.</p>
+        </header>
+        <main>
+            <div id="reportAnalysisContainer">
+                <form id="uploadForm" action="/upload-explain/" method="post" enctype="multipart/form-data">
+                    <input type="file" id="fileInput" name="file" accept="image/*" required>
+                    <button type="submit">Analyze Report</button>
+                </form>
+                <div id="explanationOutput" class="hidden">
+                    <h2>Explanation</h2>
+                    <p id="explanationText"></p>
+                    <button id="downloadPdf">Download PDF</button>
+                </div>
+            </div>
+
+            <div id="questionContainer">
+                <h2>Ask a Question</h2>
+                <form id="chatForm">
+                    <input type="text" id="questionInput" placeholder="Type your question here..." required>
+                    <button type="submit">Submit</button>
+                </form>
+                <div id="answerOutput" class="hidden">
+                    <h3>Answer</h3>
+                    <p id="answerText"></p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2024 Medical Insights. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="{% static 'report_analysis/js/app.js' %}"></script>
+</body>
+</html>
