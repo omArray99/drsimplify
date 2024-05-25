@@ -16,12 +16,12 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 from reportlab.pdfgen import canvas
 
-# model_name = "TheBloke/Mistral-7B-Instruct-v0.2-GPTQ"
-# model = AutoModelForCausalLM.from_pretrained(model_name,device_map="auto",trust_remote_code=False,revision="main")
+model_name = "TheBloke/Mistral-7B-Instruct-v0.2-GPTQ"
+model = AutoModelForCausalLM.from_pretrained(model_name,device_map="auto",trust_remote_code=False,revision="main")
 
-model_name = "openai-community/gpt2"
-model = AutoModelForCausalLM.from_pretrained(
-    model_name, device_map="auto", trust_remote_code=False)
+# model_name = "openai-community/gpt2"
+# model = AutoModelForCausalLM.from_pretrained(
+#     model_name, device_map="auto", trust_remote_code=False)
 tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=True)
 
 
@@ -81,7 +81,7 @@ def explanation_pipeline(image_path, output_str=""):
 
         input_ids = tokenizer(prompt, return_tensors='pt').input_ids.cuda()
         output = model.generate(
-            input_ids, temperature=0.6, do_sample=True, top_p=0.95, top_k=40, max_new_tokens=10)
+            input_ids, temperature=0.6, do_sample=True, top_p=0.95, top_k=40, max_new_tokens=250)
         input_length = input_ids.size(1)
         generated_tokens = output[:, input_length:]
         output_str += tokenizer.decode(
