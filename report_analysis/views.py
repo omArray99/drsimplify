@@ -90,7 +90,7 @@ def explanation_pipeline(image_path, output_str=""):
 
         input_ids = tokenizer(prompt, return_tensors='pt').input_ids.cuda()
         output = model.generate(
-            input_ids, temperature=0.6, do_sample=True, top_p=0.95, top_k=40, max_new_tokens=10)
+            input_ids, temperature=0.6, do_sample=True, top_p=0.95, top_k=40, max_new_tokens=250)
         input_length = input_ids.size(1)
         generated_tokens = output[:, input_length:]
         output_str += tokenizer.decode(
