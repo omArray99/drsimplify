@@ -1,4 +1,4 @@
-### DrSimplify
+### DrSimplify-MedExp
 OCR-Based Text Extraction and Medical Text Explanation System
 <br>
 <br>
