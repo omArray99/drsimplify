@@ -1,1 +1,5 @@
-# drsimplify
+### DrSimplify
+OCR-Based Text Extraction and Medical Text Explanation System
+<br>
+<br>
+This Python-based application integrates Tesseract-OCR with advanced image processing techniques to efficiently extract text from images. Initially, the images undergo preprocessing to enhance text clarity for OCR; this involves converting images to grayscale and then applying adaptive binarization using OpenCV. After text extraction, the system utilizes a transformer-based model from the Hugging Face library to analyze and simplify medical terminology found in the text, aiming to make the content accessible to non-medical audiences. Each component, from text extraction to explanation generation, is meticulously developed to ensure reliability and accuracy in processing. The application is wrapped in a Django framework, providing a straightforward web interface for users to interact with the system on a local server. This setup allows for practical, real-world application in environments requiring automated text extraction and interpretation, without necessitating expansive computational resources or complex configurations.
